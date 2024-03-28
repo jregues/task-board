@@ -14,3 +14,24 @@ body {
 .task-card:hover {
   cursor: grab;
 }
+
+.title {
+  margin: 5px;
+  margin-left: 0;
+  padding: 10px;
+  padding-left: 0;
+}
+
+.description {
+  margin: 5px;
+  margin-left: 0;
+  padding: 10px;
+  padding-left: 0;
+}
+
+.dueDate {
+  margin: 5px;
+  margin-left: 0;
+  padding: 10px;
+  padding-left: 0;
+}

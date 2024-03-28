@@ -1,11 +1,20 @@
 // Retrieve tasks and nextId from localStorage
-let taskList = JSON.parse(localStorage.getItem(".tasks"));
+let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    const idLength = 8;
+    let taskId = '';
 
+    for (let i = 0; i < idLength; i++) {
+        taskId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return taskId;
 }
+const randomTaskId = generateTaskId();
+console.log(randomTaskId)
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
@@ -38,7 +47,16 @@ function renderTaskList() {
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event){
-    
+    event.preventDefault();
+    $('#save').on('click', function() {
+        let newTask = {
+            title: $('#taskTitle').val(),
+            description: $('#taskContent').val(),
+            deadline: $('#dueDate').val()
+        };
+        taskList.push(newTask);
+        renderTaskList();
+    })
 }
 
 // Todo: create a function to handle deleting a task
