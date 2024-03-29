@@ -36,3 +36,4 @@ THEN the saved tasks persist
 Enter in the title, due date, and task description and watch your task appear on the task board. You will then be able to drag the job into the 'To do', 'In Progress', or 'Done' sections to keep track of your tasks.
 
 ## Screenshots
+![A screenshot of the task board](assets/images/task-board.png)
